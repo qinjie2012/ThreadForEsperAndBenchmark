@@ -1,0 +1,3 @@
+S1#select *,price * volume as turnover from Market#200
+S2#select * from Market(ticker='$').win:length(1000)#300
+S3#select * from Market.win:time_length_batch(20 sec, 1000)#300

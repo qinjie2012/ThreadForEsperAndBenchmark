@@ -1,0 +1,3 @@
+J1#select * from  Market.win:time(1 min) as m, News.win:time(1 min) as n,Users.win:time(1 min) as u where m.ticker = n.ticker and m.ticker = u.ticker#1
+J2#select * from Market.std:unique(ticker) as t full outer join News.std:unique(ticker) as n on t.ticker = n.ticker#1
+J3#select * from Market.std:lastevent() as m left outer join News.std:lastevent() as n on m.ticker = n.ticker#1

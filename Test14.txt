@@ -1,0 +1,3 @@
+A1#select ticker, avg(price),country from Market(ticker='$').win:length(10) group by country#1
+A2#select count(organisation),ticker from News(ticker='$').win:time(2 seconds) group by ticker#1
+A3#select max(holdvolume),ticker from Users(ticker='$').win:length(10) group by ticker#1

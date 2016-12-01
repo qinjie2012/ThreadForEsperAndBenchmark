@@ -1,0 +1,3 @@
+PD1#select high.ticker,high.price from pattern[every high=Market(price>20)]#3
+PD2#select a.ticker,a.price from pattern[every a=Market -> b=News]#1
+PD3#select a.ticker,a.price from pattern [every (a=Market(volume>6)  ->  News(organisation='AAAAA')  where timer:within (10 sec))]#2

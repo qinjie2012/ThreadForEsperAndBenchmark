@@ -1,0 +1,3 @@
+A1#select ticker, avg(price),country from Market(ticker='$').win:length(10) group by country#5
+A2#select ticker, max(price),country from Market(ticker='$').win:time(2 seconds) group by country#4
+A3#select ticker, sum(price),country from Market(ticker='$').win:time(3 seconds) group by country#3

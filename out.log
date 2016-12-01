@@ -1,0 +1,132 @@
+T2s=====select 'S12A' as ticker from Market(ticker='S12A').win:time(2 seconds).stat:weighted_avg(price, volume)
+L1000=====select 'S12A' as ticker from Market(ticker='S12A').win:length(1000).stat:weighted_avg(price, volume)
+simpleT2s=====select 'S12A' as ticker, avg(price), count(*), sum(price) from Market(ticker='S12A').win:time(2 seconds)
+T20m=====select 'S12A' as ticker from Market(ticker='S12A').win:time(20 min).stat:weighted_avg(price, volume)
+T60s=====select 'S12A' as ticker from Market(ticker='S12A').win:time(60 seconds).stat:weighted_avg(price, volume)
+L10000=====select 'S12A' as ticker from Market(ticker='S12A').win:length(10000).stat:weighted_avg(price, volume)
+STPNONEALL=====select * from Market(ticker='NONE-S12A')
+NOOP=====
+T10s=====select 'S12A' as ticker from Market(ticker='S12A').win:time(10 seconds).stat:weighted_avg(price, volume)
+STPNONE=====select * from Market(ticker='NONE')
+T30s=====select 'S12A' as ticker from Market(ticker='S12A').win:time(30 seconds).stat:weighted_avg(price, volume)
+L100=====select 'S12A' as ticker from Market(ticker='S12A').win:length(100).stat:weighted_avg(price, volume)
+simpleL1000=====select 'S12A' as ticker, avg(price), count(*), sum(price) from Market(ticker='S12A').win:length(1000)
+L2=====select 'S12A' as ticker from Market(ticker='S12A').win:length(2).stat:weighted_avg(price, volume)
+STP=====select * from Market(ticker='S12A')
+STP4=====select * from Market(ticker='S12A').win:length(1)
+STP3=====select * from Market.win:length(1) where ticker='S12A'
+_SUFFIX=====
+STP2=====select * from Market where ticker='S12A'
+MarketData event = 224 bit = 28 bytes
+  100 Mbit/s <==> 468k evt/s
+    1 Gbit/s <==> 4793k evt/s
+Using STP : select * from Market(ticker='S12A') 
+
+Statements registered # 1 only
+Using direct handoff, cpu#2
+Server accepting connections on port 6789.
+Client connected to server.
+---Stats - engine (unit: ns)
+  Avg: 8865 #48538
+        0 <    5000:  31.81%  31.81% #15442
+     5000 <   10000:  60.55%  92.36% #29389
+    10000 <   15000:   2.97%  95.34% #1443
+    15000 <   20000:   0.94%  96.28% #456
+    20000 <   25000:   1.29%  97.57% #627
+    25000 <   50000:   1.90%  99.46% #920
+    50000 <  100000:   0.13%  99.59% #64
+   100000 <  500000:   0.28%  99.87% #134
+   500000 < 1000000:   0.01%  99.88% #6
+  1000000 < 2500000:   0.01%  99.89% #5
+  2500000 < 5000000:   0.00%  99.89% #0
+  5000000 <    more:   0.11% 100.00% #52
+---Stats - endToEnd (unit: ms)
+  Avg: 1 #48622
+        0 <       1:  67.46%  67.46% #32800
+        1 <       5:  15.95%  83.41% #7755
+        5 <      10:  14.06%  97.46% #6834
+       10 <      50:   2.54% 100.00% #1233
+       50 <     100:   0.00% 100.00% #0
+      100 <     250:   0.00% 100.00% #0
+      250 <     500:   0.00% 100.00% #0
+      500 <    1000:   0.00% 100.00% #0
+     1000 <    more:   0.00% 100.00% #0
+Throughput 0 (active 0 pending 0 cnx 1)
+---Stats - engine (unit: ns)
+  Avg: 7534 #106318
+        0 <    5000:  39.01%  39.01% #41478
+     5000 <   10000:  58.05%  97.06% #61719
+    10000 <   15000:   1.87%  98.93% #1983
+    15000 <   20000:   0.43%  99.36% #454
+    20000 <   25000:   0.27%  99.63% #288
+    25000 <   50000:   0.09%  99.72% #94
+    50000 <  100000:   0.01%  99.73% #15
+   100000 <  500000:   0.17%  99.90% #179
+   500000 < 1000000:   0.00%  99.90% #0
+  1000000 < 2500000:   0.00%  99.90% #1
+  2500000 < 5000000:   0.00%  99.90% #0
+  5000000 <    more:   0.10% 100.00% #107
+---Stats - endToEnd (unit: ms)
+  Avg: 1 #106329
+        0 <       1:  67.53%  67.53% #71801
+        1 <       5:  16.76%  84.29% #17825
+        5 <      10:  13.43%  97.72% #14281
+       10 <      50:   2.28% 100.00% #2422
+       50 <     100:   0.00% 100.00% #0
+      100 <     250:   0.00% 100.00% #0
+      250 <     500:   0.00% 100.00% #0
+      500 <    1000:   0.00% 100.00% #0
+     1000 <    more:   0.00% 100.00% #0
+Throughput 10590 (active 0 pending 0 cnx 1)
+---Stats - engine (unit: ns)
+  Avg: 7193 #106286
+        0 <    5000:  60.06%  60.06% #63838
+     5000 <   10000:  38.74%  98.80% #41171
+    10000 <   15000:   0.56%  99.35% #590
+    15000 <   20000:   0.20%  99.55% #212
+    20000 <   25000:   0.14%  99.69% #146
+    25000 <   50000:   0.07%  99.76% #75
+    50000 <  100000:   0.02%  99.78% #16
+   100000 <  500000:   0.12%  99.90% #130
+   500000 < 1000000:   0.00%  99.90% #1
+  1000000 < 2500000:   0.00%  99.90% #0
+  2500000 < 5000000:   0.00%  99.90% #0
+  5000000 <    more:   0.10% 100.00% #107
+---Stats - endToEnd (unit: ms)
+  Avg: 1 #106286
+        0 <       1:  68.13%  68.13% #72414
+        1 <       5:  16.26%  84.39% #17282
+        5 <      10:  13.81%  98.20% #14677
+       10 <      50:   1.80% 100.00% #1913
+       50 <     100:   0.00% 100.00% #0
+      100 <     250:   0.00% 100.00% #0
+      250 <     500:   0.00% 100.00% #0
+      500 <    1000:   0.00% 100.00% #0
+     1000 <    more:   0.00% 100.00% #0
+Throughput 10611 (active 0 pending 0 cnx 1)
+---Stats - engine (unit: ns)
+  Avg: 7243 #106214
+        0 <    5000:  57.04%  57.04% #60581
+     5000 <   10000:  41.66%  98.70% #44251
+    10000 <   15000:   0.58%  99.28% #620
+    15000 <   20000:   0.26%  99.54% #277
+    20000 <   25000:   0.14%  99.69% #151
+    25000 <   50000:   0.07%  99.75% #72
+    50000 <  100000:   0.01%  99.77% #15
+   100000 <  500000:   0.13%  99.90% #139
+   500000 < 1000000:   0.00%  99.90% #2
+  1000000 < 2500000:   0.00%  99.90% #0
+  2500000 < 5000000:   0.00%  99.90% #0
+  5000000 <    more:   0.10% 100.00% #106
+---Stats - endToEnd (unit: ms)
+  Avg: 1 #106214
+        0 <       1:  67.41%  67.41% #71599
+        1 <       5:  16.34%  83.75% #17355
+        5 <      10:  14.11%  97.86% #14989
+       10 <      50:   2.14% 100.00% #2271
+       50 <     100:   0.00% 100.00% #0
+      100 <     250:   0.00% 100.00% #0
+      250 <     500:   0.00% 100.00% #0
+      500 <    1000:   0.00% 100.00% #0
+     1000 <    more:   0.00% 100.00% #0
+Throughput 10649 (active 0 pending 0 cnx 1)
