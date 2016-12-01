@@ -1,22 +1,5 @@
-To run Server and Client, please use the provided runClient and runServer command or shell scripts.
-
-Please make sure the "lib" directory contains the Esper jar file, as well as all dependency jar files before running runClient or runServer.
-
-================
-
-To run Server and Client without Ant you need to write a sh/cmd script like this.
-Note that ./etc and ./build must be in the classpath.
-
-sh:
-
-VMOPT=-Xms 1024m -Xmx10240m
-OPT=-rate 4x10000 -mode STP
-java $VMOPT -classpath etc:build:lib/esper-4.9.0.jar:lib/antlr-runtime-3.2.jar:(add others) com.espertech.esper.example.benchmark.server.Server $OPT
-
-cmd:
-
-set VMOPT=-Xms 1024m -Xmx10240m
-set OPT=-rate 4x10000 -mode STP
-java %VMOPT% -classpath etc;build:lib\esper-4.9.0.jar;lib\antlr-runtime-3.2.jar;(add others) com.espertech.esper.example.benchmark.server.Server %OPT%
-
-For client the main class is com.espertech.esper.example.benchmark.client.Client
+1.项目采用Maven进行部署。poxm.xml
+2.项目中把Esper用Esper-5.2.jar的源码带入，便于跟踪进行debug
+3.项目中package com.esper.example.model中MyThreadPool为设计的线程核心类
+4.Package com.espertech.esper.example.benchmark.*为设计的benchmark平台，使用时需要设计client工程和server工程
+5.text*.txt为各种注册的语句类
